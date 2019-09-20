@@ -10,4 +10,6 @@ class Route extends Model
         return $this->hasMany('App\Post', 'posts_routes');
     }
 
+
+
 }

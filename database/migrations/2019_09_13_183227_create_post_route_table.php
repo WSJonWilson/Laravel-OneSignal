@@ -19,6 +19,10 @@ class CreatePostRouteTable extends Migration
             $table->integer('post_id');
             $table->integer('route_id');
         });
+
+        // Schema::create('post_routes', function (Blueprint $table) {
+        //     $table->integer('route_id')->nullable()->after('slug')->unsigned();
+        // });
     }
 
     /**

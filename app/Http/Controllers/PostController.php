@@ -2,14 +2,30 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
+use App\Route;
 use OneSignal;
 
 class PostController extends Controller{
 
     public function getIndex(){
 
+        $posts = Post::paginate(5);
+        foreach ($posts as $post){
+            $post->body = $this->shortenText($post->body, 20);
+        }
+        return view('frontend.blog.index', ['posts' => $posts]);
+    }
 
-        return view('frontend.blog.index');
+    public function getRouteData(){
+
+        $routes = Route::all();
+
+        return view('frontend.blog.create', ['routes' => $routes]);
+    }
+
+    public function getData(){
+        $posts = Post::all()->toArray();
+        return $posts;
     }
 
     public function postCreatePost(Request $request){
@@ -23,7 +39,7 @@ class PostController extends Controller{
         $headings['en'] = $request['title'];
 
 
-        OneSignal::setParam('headings', $headings)->sendNotificationTo(
+        OneSignal::setParam('headings', $headings)->sendNotificationToAll(
             $request['body'],
             $url = null,
             $data = null,
@@ -40,6 +56,15 @@ class PostController extends Controller{
 
 
         return redirect()->route('blog.index')->with(['success' => 'Post successfully created!']);
+}
+
+private function shortenText($text, $words_count){
+    if (str_word_count($text, 0) > $words_count){
+        $words = str_word_count($text, 2);
+        $pos = array_keys($words);
+        $text= substr($text, 0, $pos[$words_count]) . '...';
+    }
+    return $text;
 }
 
 }

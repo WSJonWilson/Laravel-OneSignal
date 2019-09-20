@@ -16,9 +16,12 @@ class CreateRoutesTable extends Migration
         Schema::create('routes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('name');
-            $table->rememberToken();
-            $table->string('password');
+            $table->string('route_name');
+            $table->string('courier_name');
+
+            // $table->boolean('public');
+            // $table->rememberToken();
+            // $table->string('password');
         });
     }
 

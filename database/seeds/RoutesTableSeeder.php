@@ -11,16 +11,16 @@ class RoutesTableSeeder extends Seeder
      */
     public function run()
     {
-        $route = new \App\Route();
-        $route->name= 'East A';
-        $route->save();
+        // $route = new \App\Route();
+        // $route->name= 'East A';
+        // $route->save();
 
-        $route = new \App\Route();
-        $route->name= 'East B';
-        $route->save();
+        // $route = new \App\Route();
+        // $route->name= 'East B';
+        // $route->save();
 
-        $route = new \App\Route();
-        $route->name= 'East C';
-        $route->save();
+        // $route = new \App\Route();
+        // $route->name= 'East C';
+        // $route->save();
     }
 }

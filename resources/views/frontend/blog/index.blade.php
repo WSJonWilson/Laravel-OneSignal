@@ -16,41 +16,50 @@
 @section('content')
 <div class="main_content">
     <h2 class="title-head">Home</h2>
+    <div id="app">
+        {{-- <Tableview></Tableview> --}}
+
+    </div>
 
         <div class="row">
             <div class="col-4"></div>
 
             <div class="col-4">
 
-                    <div class="card">
-                            <li class="list-item">
-                                <div class="row">
-                                    <div class="col-1"> icon</div>
-                                    <div class="col-5">
-                                        <p>
-                                            Title
-                                        </p>
-                                    <p>body</p>
-                                    </div>
-                                    <div class="col-3"></div>
-                                    <div class="col-3">
-                                        <p>Status</p>
-                                        <p>edit</p>
-                                    </div>
+
+{{--
+                      <h3>{{ $post->title }}</h3>
+                  <p>{{ $post->body }}</p>
+            <span class="subtitle"> Author: Unknown | {{ $post->created_at }}</span>
+             --}}
+                                        {{-- <a href="{{ route('blog.single', ['post_id' => $post->id, 'end' => 'frontend']) }}">Read more</a> --}}
+                                    {{-- </div>
                                 </div>
                             </li>
                         </div>
-                        <div class="card">
-                            <li class="list-item">2</li>
-                        </div>
-                        <div class="card">
-                            <li class="list-item">3</li>
-                        </div>
+                    </article>
+                    @endforeach
+
+
+                    @if ($posts->lastPage() > 1)
+                    <section class="pagination">
+                            @if($posts->currentPage() !== 1)
+                    <a href="{{ $posts->previousPageUrl() }}"><i class="fa fa-caret-left"></i></a>
+                        @endif
+                        @if($posts->currentPage() !== $posts->lastPage())
+                        <a href="{{ $posts->nextPageUrl() }}"><i class="fa fa-caret-right"></i></a>
+                        @endif
+                    </section>
+
+                    @endif --}}
 
             </div>
 
 
-            <div class="col-4"></div>
+            <div class="col-4">
+
+
+            </div>
         </div>
         </div>
 </div>
