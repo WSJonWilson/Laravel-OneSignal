@@ -12,6 +12,6 @@ class Post extends Model
     // }
 
     public function routes(){
-        return $this->belongToMany('App\Route');
+        return $this->belongsToMany('App\Route');
     }
 }

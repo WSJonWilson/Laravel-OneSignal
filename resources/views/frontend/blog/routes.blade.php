@@ -29,7 +29,7 @@
           <!-- Title -->
           <h4 class="card-title">{{ $route->route_name }} </h4>
           <!-- Text -->
-          <p class="card-text">S{{ $route->courier_name }}</p>
+          <p class="card-text">{{ $route->courier_name }}</p>
           <!-- Button -->
           <a href="#" class="btn btn-primary">Edit</a>
           <a href="#" class="btn btn-danger">Delete</a>

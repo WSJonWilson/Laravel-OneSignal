@@ -34,10 +34,10 @@
                                     </select>
                                     --}}
 
-                                        <select class="selectpicker" multiple data-live-search="true">
+                                        <select name="route_id[]" class="selectpicker" multiple data-live-search="true">
 
                                             @foreach($routes as $route)
-                                            <option>{{ $route->route_name }}</option>
+                                        <option value="{{ $route->id }}">{{ $route->route_name }}</option>
                                             @endforeach
 
                                               </select>

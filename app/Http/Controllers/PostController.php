@@ -29,10 +29,20 @@ class PostController extends Controller{
     }
 
     public function postCreatePost(Request $request){
+
         $this->validate($request,[
             'title' => 'required|max:120|unique:posts',
-            'body' => 'required'
+            'body' => 'required',
+            'route_id' => 'required',
         ]);
+        $join = $routeList = '';
+
+        foreach($request->route_id AS $id)
+        {
+            $routeList .= $join . '' . $id . '';
+            $join = ', ';
+
+        }
 
         //header
         $headings = [];
@@ -49,7 +59,8 @@ class PostController extends Controller{
 
         $post = new Post();
         $post-> title = $request['title'];
-        // $post->author = $request['author'];
+        //Column not found: 1054 Unknown column 'route_id' in 'field list'
+        $post->route_id = $routeList;
         $post->body = $request['body'];
         $post->save();
 
