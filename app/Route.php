@@ -8,12 +8,9 @@ class Route extends Model
 {
     public function posts() {
 
-        return $this->hasMany('App\Post', 'posts_routes');
+        return $this->belongsToMany('App\Post');
 
     }
-
-    protected $table = 'routes';
-
 
 
 }

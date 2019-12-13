@@ -13,16 +13,15 @@ class CreatePostRouteTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_routes', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
-            $table->integer('post_id');
-            $table->integer('route_id');
-        });
+        Schema::create('post_route', function (Blueprint $table) {
 
-        // Schema::create('post_routes', function (Blueprint $table) {
-        //     $table->integer('route_id')->nullable()->after('slug')->unsigned();
-        // });
+            $table->integer('post_id')->unsigned();
+            $table->foreign('post_id')->references('id')->on('posts');
+
+            $table->integer('route_id')->unsigned();
+            $table->foreign('route_id')->references('id')->on('routes');
+
+        });
     }
 
     /**

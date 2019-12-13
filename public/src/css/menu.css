@@ -61,7 +61,7 @@
 
 }
 
-.card{
+/* .card{
     color: #fafafa;
     box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
@@ -73,7 +73,7 @@
     width: 700px;
     height: 200px;
     text-align: center;
-}
+} */
 .list-item{
     display: block;
     color:#000c20;
@@ -87,3 +87,5 @@
 .container-fluid{
     height: 100%;
 }
+
+

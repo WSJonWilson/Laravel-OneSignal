@@ -41,3 +41,17 @@ form button{
 .input-group textarea.has-error{
     border: 1px solid red;
 }
+
+#title{
+    width: 50%;
+    margin-left: 5px;
+}
+
+#body{
+    width: 50%;
+    margin-left: 5px;
+}
+
+.selectpicker{
+    margin-left: 50%;
+}

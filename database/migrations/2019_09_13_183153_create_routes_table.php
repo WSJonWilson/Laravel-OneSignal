@@ -14,14 +14,10 @@ class CreateRoutesTable extends Migration
     public function up()
     {
         Schema::create('routes', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->timestamps();
             $table->string('route_name');
             $table->string('courier_name');
-
-            // $table->boolean('public');
-            // $table->rememberToken();
-            // $table->string('password');
         });
     }
 

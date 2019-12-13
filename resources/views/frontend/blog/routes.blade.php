@@ -2,7 +2,7 @@
 
 @section('styles')
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="{{URL::secure('src/css/routes.css') }}" type="text/css">
+<link rel="stylesheet" href="{{URL::to('src/css/routes.css') }}" type="text/css">
 <link rel="stylesheet" href="{{ URL::to('src/css/menu.css') }}">
 <link rel="stylesheet" href="{{ URL::to('src/css/form.css') }}">
 @endsection
@@ -10,22 +10,24 @@
 @section('content')
 
 
-<div class="container">
+<div class="routes_container">
         <div class="row">
                 <div class="col-5">
     <section id="route-admin" >
                 <button class="btn btn-default"><a href="{{route ('create.route') }}">Create Route</a></button>
         </form>
     </section>
+
+
+
     <section class="list">
+            <ul>
+
         @foreach($routes as $route)
-            <article>
-
-<div class="card">
-
+            {{-- <article> --}}
+    <li class="wrapper">
         <!-- Card content -->
         <div class="card-body">
-
           <!-- Title -->
           <h4 class="card-title">{{ $route->route_name }} </h4>
           <!-- Text -->
@@ -33,12 +35,11 @@
           <!-- Button -->
           <a href="#" class="btn btn-primary">Edit</a>
           <a href="#" class="btn btn-danger">Delete</a>
-
-
         </div>
-
-      </div>
+    </li>
+            {{-- </article> --}}
         @endforeach
+            </ul>
     </section>
     @if ($routes->lastPage() > 1)
 <section class="pagination">
@@ -61,7 +62,7 @@
 <div class="col-1">
     </div>
 </div>
-
+</div>
 @endsection
 
 @section('scripts')

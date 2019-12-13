@@ -2,3 +2,28 @@
     background-color: white;
     transition: background-color 0.5s;
 }
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 10px;
+    background-color: #fff;
+    color: #444;
+  }
+
+  .list ul {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    width: 33%;
+    text-align: left;
+    float: left;
+  }
+  .list ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+  }
+  .list ul li span {
+    padding: 0;
+  }
